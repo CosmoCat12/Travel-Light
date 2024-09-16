@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
+import { useFavorites } from '../hooks/useFavorites'; // Подключаем хук избранного
 import '../assets/styles.scss'; // Импорт стилей
 
 function MainPage() {
@@ -8,6 +9,7 @@ function MainPage() {
   const [searchTerm, setSearchTerm] = useState<string>(""); // Для поиска
   const { signOut } = useAuth(); // Добавляем signOut
   const navigate = useNavigate();
+  const { favorites } = useFavorites(); // Подключаем избранные страны
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -23,14 +25,19 @@ function MainPage() {
     navigate(`/post/${countryCode}`);
   };
 
-  const filteredCountries = countries.filter((country) =>
-    country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   const handleSignOut = () => {
     signOut();
     navigate('/'); // Перенаправление на страницу логина
   };
+
+  // Добавляем кнопку перехода на страницу избранных стран
+  const goToFavorites = () => {
+    navigate('/fav');
+  };
+
+  const filteredCountries = countries.filter((country) =>
+    country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="main-page">
@@ -46,13 +53,14 @@ function MainPage() {
         <button onClick={handleSignOut} className="sign-out-btn">
           Sign Out
         </button>
+        <button onClick={goToFavorites} className="favorites-btn">Go to Favorites</button> {/* Кнопка перехода */}
       </div>
 
       <div className="countries">
         {filteredCountries.map((country) => (
           <div
             key={country.cca3}
-            className="country"
+            className={`country ${favorites.includes(country.name.common) ? 'favorite' : ''}`} // Если страна в избранном, окрашиваем её
             onClick={() => handleClick(country.cca3)}
           >
             {country.name.common}

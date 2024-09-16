@@ -3,7 +3,8 @@ import { useAuth } from '@clerk/clerk-react';
 import LoginPage from './pages/LoginPage';
 import RegistrationPage from './pages/RegistrationPage';
 import MainPage from './pages/MainPage';
-import PostPage from './pages/PostPage'; // Импортируйте новый компонент
+import FavoritePage from './pages/FavoritePage'; // Импортируйте новый компонент
+import PostPage from './pages/PostPage';
 
 function App() {
   const { isSignedIn } = useAuth();
@@ -14,6 +15,7 @@ function App() {
       <Route path="/registration" element={<RegistrationPage />} />
       <Route path="/main" element={isSignedIn ? <MainPage /> : <LoginPage />} />
       <Route path="/post/:countryCode" element={isSignedIn ? <PostPage /> : <LoginPage />} />
+      <Route path="/fav" element={<FavoritePage />} />
     </Routes>
   );
 }

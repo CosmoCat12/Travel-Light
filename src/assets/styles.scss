@@ -1,4 +1,4 @@
-body {
+.body {
   font-family: Arial, sans-serif;
 }
 
@@ -24,18 +24,30 @@ body {
       margin-right: 10px;
     }
 
-    .sign-out-btn {
+    .sign-out-btn,
+    .favorites-btn {
       padding: 10px 20px;
-      background-color: #ff4d4d;
       border: none;
       border-radius: 5px;
       color: white;
       cursor: pointer;
       transition: background-color 0.3s;
+      margin-left: 10px;
 
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+
+    .sign-out-btn {
+      background-color: #ff4d4d;
       &:hover {
         background-color: #cc0000;
       }
+    }
+
+    .favorites-btn {
+      background-color: #4caf50;
     }
   }
 
@@ -50,6 +62,77 @@ body {
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s;
+
+      &.favorite {
+        background-color: #ffeb3b; // Жёлтый цвет для избранных стран
+      }
+
+      &:hover {
+        background-color: #eaeaea;
+      }
+    }
+  }
+}
+
+.post-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  .favorite-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+
+    &.remove-favorite {
+      background-color: #f44336;
+    }
+
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+
+  .back-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #d32f2f;
+    }
+  }
+}
+
+.favorite-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .favorite-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .favorite-country {
+      padding: 15px;
+      background: #f4f4f4;
+      border-radius: 8px;
+      cursor: pointer;
 
       &:hover {
         background-color: #eaeaea;
