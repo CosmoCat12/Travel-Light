@@ -1,0 +1,122 @@
+.body {
+  font-family: Arial, sans-serif;
+}
+
+.main-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.main-page .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.main-page .header h1 {
+  margin: 0;
+}
+.main-page .header .search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.main-page .header .sign-out-btn,
+.main-page .header .favorites-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+.main-page .header .sign-out-btn:hover,
+.main-page .header .favorites-btn:hover {
+  background-color: #45a049;
+}
+.main-page .header .sign-out-btn {
+  background-color: #ff4d4d;
+}
+.main-page .header .sign-out-btn:hover {
+  background-color: #cc0000;
+}
+.main-page .header .favorites-btn {
+  background-color: #4caf50;
+}
+.main-page .countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.main-page .countries .country {
+  padding: 15px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.main-page .countries .country.favorite {
+  background-color: #ffeb3b;
+}
+.main-page .countries .country:hover {
+  background-color: #eaeaea;
+}
+
+.post-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.post-page h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.post-page p {
+  margin: 10px 0;
+}
+.post-page .favorite-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.post-page .favorite-btn.remove-favorite {
+  background-color: #f44336;
+}
+.post-page .favorite-btn:hover {
+  background-color: #45a049;
+}
+.post-page .back-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.post-page .back-btn:hover {
+  background-color: #d32f2f;
+}
+
+.favorite-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.favorite-page .favorite-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.favorite-page .favorite-list .favorite-country {
+  padding: 15px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.favorite-page .favorite-list .favorite-country:hover {
+  background-color: #eaeaea;
+}/*# sourceMappingURL=styles.css.map */

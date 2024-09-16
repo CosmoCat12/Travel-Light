@@ -18,17 +18,17 @@ function FavoritePage() {
   return (
     <div className="favorite-page">
       <h1>Favorite Countries</h1>
-      <div className="favorite-list">
+      <ul className="favorite-list">
         {favorites.map((country) => (
-          <div
-            key={country}
+          <li
+            key={country} // Используем название страны как ключ
             className="favorite-country"
-            onClick={() => handleCountryClick(country)}
+            onClick={() => handleCountryClick(country)} // При клике на название переходим на страницу страны
           >
-            {country}
-          </div>
+            {country} {/* Выводим только название страны */}
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
