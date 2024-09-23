@@ -1,0 +1,242 @@
+* {
+  font-family: "Cascadia Code", monospace;
+}
+
+.main-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h1 {
+      margin: 0;
+    }
+
+    .search-input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .sign-out-btn,
+    .favorites-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-left: 10px;
+
+
+      &:hover {
+        background-color: #40E0D0;
+      }
+    }
+
+    .sign-out-btn {
+      background-color: #FF355E;
+      [data-theme="dark"] & {
+        background-color: #A8092D;
+      }
+      &:hover {
+        background-color: #cc0000;
+      }
+    }
+
+    .favorites-btn {
+      background-color:  #2AC6B6  ;
+
+      [data-theme="dark"] & {
+        background-color: #22797A;
+      }
+    }
+  }
+
+  .countries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    
+
+    .country {
+      padding: 15px;
+      background: #959595; // Светлый фон по умолчанию
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      background: transparent;
+      
+
+
+      &.favorite {
+        background-color: #ffeb3b;
+        [data-theme="dark"] & {
+          background-color:  #EEB42C;
+        }
+      }
+
+      &:hover {
+        background-color:  #CFD1D4;
+        background-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1;
+        border-style: solid;
+      }
+
+      // Стили для темного режима
+      [data-theme="dark"] & {
+        background: #001D3F; // Темный фон для темного режима
+
+        &.favorite {
+          background-color: #ffeb3b; // Жёлтый цвет для избранных стран
+        }
+
+        &:hover {
+          background-color:#04356A;
+          background-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1;
+          border-radius: 8px;
+          border-style: solid;
+        }
+      }
+    }
+  }
+}
+
+.post-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  .favorite-btn {
+    background-color: #4caf50;
+    [data-theme="dark"] & {
+      background-color: #22797A;
+    }
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 8px;
+
+    &.remove-favorite {
+      background-color: #f44336;
+      [data-theme="dark"] & {
+        background-color: #A8092D;
+      }
+      border-radius: 8px;
+    }
+
+    &:hover {
+      background-color: #45a049;
+      [data-theme="dark"] & {
+        background-color: #114852;
+      }
+    }
+  }
+
+  .back-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: #d32f2f;
+    }
+  }
+}
+
+.favorite-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .favorite-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    .favorite-country {
+      padding: 15px;
+      background: #f4f4f4;
+      border-radius: 8px;
+      cursor: pointer;
+      [data-theme="dark"] & {
+        background-color: #0B262B;
+      }
+
+      &:hover {
+        background-color: #eaeaea;
+        [data-theme="dark"] & {
+          background-color: #114852;
+        }
+      }
+    }
+  }
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  font-family: "Cascadia Code", monospace;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.input-field {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-family: "Cascadia Code", monospace;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--focus-border-color);
+}
+
+:root {
+  --background-color: #fff;
+  --text-color: #000919;
+}
+
+[data-theme="dark"] {
+  --background-color: #000919;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+[data-theme="light"]  {
+  body {
+    background-color: #B6B6B6;
+  }
+}
